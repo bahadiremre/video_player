@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="public/js/jquery-3.5.1.min.js"></script>
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <title>Video Player</title>
+</head>
+
+<body>
+    <div>
+        <section class="bg-primary">
+            <div class="container">
+
+                <nav class="navbar navbar-expand fixed-top navbar-dark bg-dark navbar-offcanvas">
+                    <button class="navbar-toggler d-block" type="button" id="navToggle">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- <a class="navbar-brand mr-auto" href="#">Video Player</a> -->
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mr-2">
+                            <li class="nav-item dropdown">
+                                <a class=" text-light font-weight-bold text-uppercase nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">boyut</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" data-size='col-6' href="#">1x</a>
+                                    <a class="dropdown-item" data-size='col-7' href="#">2x</a>
+                                    <a class="dropdown-item" data-size='col-8' href="#">3x</a>
+                                    <a class="dropdown-item" data-size='col-9' href="#">4x</a>
+                                    <a class="dropdown-item" data-size='col-10' href="#">5x</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section>
+            <div class="navbar-collapse offcanvas-collapse navbar-dark">
+                <div class="navbar-nav mr-auto">
+                    <div class="rounded-sm mt-2 p-2 w-100 bg-light h-100">
+                        selam
+                    </div>
+                </div>
+            </div>
+            <div id='main' class="text-center container-fluid py-3">
+                <video class="col-6 p-0" controls>
+                    <source src="public/videos/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+
+        </section>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="offcanvas"], #navToggle').on('click', function() {
+            $('.offcanvas-collapse').toggleClass('open');
+            $('#main').toggleClass('open')
+        })
+        $('.dropdown-menu .dropdown-item').on('click', function() {
+            $("video").removeClass(function(index, className) {
+                return (className.match(/(^|\s)col-\S+/g) || []).join('');
+            });
+            $('video').addClass($(this).data('size'));
+        })
+    });
+</script>
+
+</html>
