@@ -12,33 +12,33 @@ body {
 }
 
 .offcanvas-collapse {
-    position: fixed;
-    top: 56px;
+    position                  : fixed;
+    top                       : 56px;
     /* Height of navbar */
-    bottom: 0;
-    right: 100%;
-    left: 0;
-    width: 0%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow: hidden;
-    visibility: hidden;
-    background-color: #343a40;
+    bottom                    : 0;
+    right                     : 100%;
+    left                      : 0;
+    width                     : 0%;
+    padding-right             : 1rem;
+    padding-left              : 1rem;
+    overflow                  : hidden;
+    visibility                : hidden;
+    background-color          : #343a40;
     transition-timing-function: ease-in-out;
-    transition-duration: .3s;
-    transition-property: width, visibility;
+    transition-duration       : .3s;
+    transition-property       : width, visibility;
 }
 
 .offcanvas-collapse {
-    align-items: start;
+    align-items            : start;
     /*   Adds a subtle drop shadow   */
-    -moz-background-clip: padding;
+    -moz-background-clip   : padding;
     /* Firefox 3.6 */
     -webkit-background-clip: padding;
     /* Safari 4? Chrome 6? */
-    background-clip: padding-box;
+    background-clip        : padding-box;
     /* Firefox 4, Safari 5, Opera 10, IE 9 */
-    border-right: 5px solid rgba(0, 0, 0, 0.1);
+    border-right           : 5px solid rgba(0, 0, 0, 0.1);
 }
 
 
@@ -46,19 +46,19 @@ body {
 
 .offcanvas-collapse.open {
     /* left: 0; */
-    width: 30%;
+    width     : 30%;
     visibility: visible;
-    overflow: auto;
+    overflow  : auto;
 }
 
 #main {
-    height: 100%;
-    position: fixed;
-    right: 0;
-    width: 100%;
+    height                    : 100%;
+    position                  : fixed;
+    right                     : 0;
+    width                     : 100%;
     transition-timing-function: ease-in-out;
-    transition-duration: .3s;
-    transition-property: width;
+    transition-duration       : .3s;
+    transition-property       : width;
 }
 
 #main.open {
@@ -67,35 +67,35 @@ body {
 
 .navbar-nav {
     -ms-flex-direction: column;
-    flex-direction: column;
+    flex-direction    : column;
 }
 
 .nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
+    position  : relative;
+    z-index   : 2;
+    height    : 2.75rem;
     overflow-y: hidden;
 }
 
 .nav-scroller .nav {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    color: rgba(255, 255, 255, .75);
-    text-align: center;
-    white-space: nowrap;
+    display                   : -ms-flexbox;
+    display                   : flex;
+    -ms-flex-wrap             : nowrap;
+    flex-wrap                 : nowrap;
+    padding-bottom            : 1rem;
+    margin-top                : -1px;
+    overflow-x                : auto;
+    color                     : rgba(255, 255, 255, .75);
+    text-align                : center;
+    white-space               : nowrap;
     -webkit-overflow-scrolling: touch;
 }
 
 .nav-underline .nav-link {
-    padding-top: .75rem;
+    padding-top   : .75rem;
     padding-bottom: .75rem;
-    font-size: .875rem;
-    color: #6c757d;
+    font-size     : .875rem;
+    color         : #6c757d;
 }
 
 .nav-underline .nav-link:hover {
@@ -104,5 +104,14 @@ body {
 
 .nav-underline .active {
     font-weight: 500;
-    color: #343a40;
+    color      : #343a40;
+}
+
+video {
+    border-radius: 1rem;
+}
+
+video:focus {
+    outline: none;
+
 }

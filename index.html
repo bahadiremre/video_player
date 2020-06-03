@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/treeview.css">
     <script src="public/js/jquery-3.5.1.min.js"></script>
     <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/data.js"></script>
+    <script src="public/js/treeview.js"></script>
+
     <title>Video Player</title>
 </head>
 
@@ -42,14 +46,16 @@
         <section>
             <div class="navbar-collapse offcanvas-collapse navbar-dark">
                 <div class="navbar-nav mr-auto">
-                    <div class="rounded-sm mt-2 p-2 w-100 bg-light h-100">
-                        selam
+                    <div class="rounded-sm mt-2 p-2 w-100 bg-light h-100 text-nowrap overflow-auto">
+                        <ul id='treeview-tray'>
+
+                        </ul>
                     </div>
                 </div>
             </div>
             <div id='main' class="text-center container-fluid py-3">
-                <video class="col-6 p-0" controls>
-                    <source src="public/videos/mov_bbb.mp4" type="video/mp4">
+                <video id='video' class="col-6 p-0" controls>
+                    <source src="" type="video/mp4">
                     Your browser does not support HTML video.
                 </video>
             </div>
@@ -69,6 +75,8 @@
             });
             $('video').addClass($(this).data('size'));
         })
+
+        loadTree('#treeview-tray',myData);
     });
 </script>
 
