@@ -1,12 +1,14 @@
 //you can overload links click method
 //
-// $('.treeview-text').click(function (e) {
-//     $('#mySpan').text($(this).attr('data-src'));
+// $(".treeview-text").on("click", function (e) {
+//     e.stopPropagation();
+//     e.preventDefault();
 // })
 
 function loadTree(parentID, data) {
     var el = $(parentID);
     var olContent = "", link = "";
+    el.empty();
 
     function printAllVals(obj) {
 
@@ -17,7 +19,7 @@ function loadTree(parentID, data) {
                 link = "<a class='treeview-text' href='#' data-src='" + obj["src"] + "' >" + obj['text'] + "</a>";
 
                 if (obj['nodes'].length > 0) { //if has children
-                    olContent += "<li><span class='caret'>" + link + "</span>";
+                    olContent += "<li><span class='caret'></span>" + link;
                     olContent += "<ul class='nested'>";
                     printAllVals(obj["nodes"]);
                     olContent += "</ul></li>"
@@ -46,12 +48,9 @@ function loadTree(parentID, data) {
         });
     }
 
-    $('.treeview-text').click(function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        let src = $(this).attr('data-src');
-        $('#video').find('source').attr('src', src);
-        let autoplayVideo = $("#video").get(0);
-        autoplayVideo.load();
-    })
+    // $(".treeview-text").on("click", function (e) {
+    //     e.stopPropagation();
+    //     e.preventDefault();
+    // })
+
 }

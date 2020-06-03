@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Editor</title>
+    <script src="jsoneditor.min.js"></script>
+    <link rel="stylesheet" href="jsoneditor.min.css">
+</head>
+
+<body>
+    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+
+    <script>
+        // create the editor
+        const container = document.getElementById("jsoneditor")
+        const options = {}
+        const editor = new JSONEditor(container, options)
+
+        // set json
+        const initialJson = {
+            "Array": [1, 2, 3],
+            "Boolean": true,
+            "Null": null,
+            "Number": 123,
+            "Object": { "a": "b", "c": "d" },
+            "String": "Hello World"
+        }
+        editor.set(initialJson)
+
+        // get json
+        const updatedJson = editor.get()
+    </script>
+</body>
+
+</html>

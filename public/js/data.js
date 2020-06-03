@@ -1,4 +1,4 @@
-var myData = [
+var data = [
   {
     "text": "Gitarcı",
     "src": "public/videos/mov (1).mp4",

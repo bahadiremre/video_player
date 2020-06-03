@@ -29,7 +29,9 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mr-2">
                             <li class="nav-item dropdown">
-                                <a class=" text-light font-weight-bold text-uppercase nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">boyut</a>
+                                <a class=" text-light font-weight-bold text-uppercase nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">boyut</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" data-size='col-6' href="#">1x</a>
                                     <a class="dropdown-item" data-size='col-7' href="#">2x</a>
@@ -62,21 +64,29 @@
 
         </section>
     </div>
+
 </body>
 <script>
-    $(document).ready(function() {
-        $('[data-toggle="offcanvas"], #navToggle').on('click', function() {
+    $(document).ready(function () {
+        $('[data-toggle="offcanvas"], #navToggle').on('click', function () {
             $('.offcanvas-collapse').toggleClass('open');
             $('#main').toggleClass('open')
         })
-        $('.dropdown-menu .dropdown-item').on('click', function() {
-            $("video").removeClass(function(index, className) {
+        $('.dropdown-menu .dropdown-item').on('click', function () {
+            $("video").removeClass(function (index, className) {
                 return (className.match(/(^|\s)col-\S+/g) || []).join('');
             });
             $('video').addClass($(this).data('size'));
         })
 
-        loadTree('#treeview-tray',myData);
+        loadTree('#treeview-tray', data);
+
+        $('.treeview-text').click(function (e) {
+        let src = $(this).attr('data-src');
+        $('#video').find('source').attr('src', src);
+        let autoplayVideo = $("#video").get(0);
+        autoplayVideo.load();
+    })
     });
 </script>
 
