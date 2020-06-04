@@ -25,7 +25,8 @@
                     <button class="navbar-toggler d-block" type="button" id="navToggle">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <!-- <a class="navbar-brand mr-auto" href="#">Video Player</a> -->
+
+                    <a class="navbar-brand mx-auto" href="index.html">Video Player</a>
 
                 </nav>
             </div>
@@ -33,7 +34,7 @@
         <section>
             <div class="navbar-collapse offcanvas-collapse navbar-dark">
                 <div class="navbar-nav mr-auto">
-                    <div class="rounded-sm mt-2 p-2 w-100 bg-light h-100 text-nowrap overflow-auto">
+                    <div class="rounded mt-2 p-2 w-100 bg-light h-100 text-nowrap overflow-auto">
                         <div class="col-12 d-flex justify-content-between">
                             <a href="#" class="btn btn-outline-primary" id='addNode'>Ekle</a>
                             <a href="#" class="btn btn-outline-info" id="addChildNode">Alt Madde Ekle</a>
@@ -48,19 +49,23 @@
             </div>
             <div id='main' class="text-center container-fluid py-3">
 
-                <div class="form-group">
-                    <label for="videoText">Metin</label>
-                    <input type="text" class="form-control" id="videoText">
+                <div class="p-3">
+                    <div class="form-group">
+                        <label for="videoText">Metin</label>
+                        <input type="text" class="form-control" id="videoText">
+                    </div>
+                    <div class="form-group">
+                        <label for="videoSrc">Video Adresi</label>
+                        <input type="text" class="form-control" id="videoSrc"
+                            placeholder="örn: public/videos/movie.mp4">
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="btn btn-outline-success" id="applyChanges">Değişiklikleri Uygula</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="videoSrc">Video Adresi</label>
-                    <input type="text" class="form-control" id="videoSrc" placeholder="örn: public/videos/movie.mp4">
-                </div>
-                <div class="form-group">
-                    <a href="#" class="btn btn-outline-success" id="applyChanges">Değişiklikleri Uygula</a>
-                </div>
+
                 <hr>
-                <button id="save-btn">Save Text file</button>
+                <button class="btn btn-info" id="save-btn">Değişiklikleri Dosyaya Kaydet</button>
             </div>
 
         </section>
@@ -70,10 +75,10 @@
 <script>
 
     $(document).ready(function () {
-        // $("#save-btn").click(function () {
-        //     var blob = new Blob([JSON.stringify(myData)], { type: "text/plain;charset=utf-8" });
-        //     saveAs(blob, "testfile1.txt");
-        // });
+        $("#save-btn").click(function () {
+            var blob = new Blob(["var data=" + JSON.stringify(data)], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "data.txt");
+        });
 
         $('[data-toggle="offcanvas"], #navToggle').on('click', function () {
             $('.offcanvas-collapse').toggleClass('open');
